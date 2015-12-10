@@ -33,7 +33,12 @@ switch($page){
         break;
 
     default;
+        include 'views/home.php';
+
+        break;
 
 }
+
+include 'views/rechts.php';
 
 include 'views/footer.php';

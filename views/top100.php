@@ -1,7 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jorisbulters
- * Date: 19-11-15
- * Time: 09:06
- */
+<div id="test">
+
+
+    <h3>
+        TEST
+    </h3>
+    <p>just a test page</p>
+</div>
