@@ -1,22 +1,24 @@
+<?php
+$param = mysqli_escape_string($mysqli, $_GET["song_id"]);
+$query = "SELECT * FROM topsongs WHERE song_id=" . $param . " ORDER BY song_nr ASC;";
+$result = $mysqli->query($query);
+$song = $result->fetch_assoc();
+?>
 <section id="songdetail">
-    <h1>In de Radio 1 Tour Top 100</h1>
+    <h1><?= $song["song_title"] ?></h1>
 
     <div class="songdetails">
-
         <div class="lastsong">
-
         </div>
 
         <div class="currentsong">
-
         </div>
 
         <div class="nextsong">
-
         </div>
 
         <div class="songvidbig">
-            youtube vid
+            <?= $song["song_embed"] ?>
         </div>
 
         <div class="songinfo">

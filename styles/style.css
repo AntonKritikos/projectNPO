@@ -81,7 +81,7 @@ body {
   body header div#fietser {
     position: absolute;
     left: 850px;
-    top: 70px;
+    top: 60px;
     z-index: 10; }
   body header div#datum {
     border-top-left-radius: 10px;
@@ -103,6 +103,9 @@ body {
       float: left;
       font-family: 'Tahoma', sans-serif;
       text-transform: uppercase; }
+    body header div#datum a {
+      text-decoration: none;
+      color: black; }
     body header div#datum ul#dagen {
       margin: 0px;
       list-style-type: none; }
@@ -120,21 +123,27 @@ body {
           background-color: grey;
           background: -webkit-linear-gradient(top, #1e5799 0%, #333333 0%, #ffffff 83%, #ffffff 100%);
           background: linear-gradient(to bottom, #1e5799 0%, #333333 0%, #ffffff 83%, #ffffff 100%);
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#ffffff',GradientType=0 ); }
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#ffffff', GradientType=0); }
+          body header div#datum ul#dagen li.past:hover, body header div#datum ul#dagen li.past.selected {
+            border: 2px solid red;
+            width: 35px;
+            padding-left: 1px;
+            margin-top: -5px;
+            margin-left: -3px; }
         body header div#datum ul#dagen li.today {
           background-color: white;
           -webkit-box-shadow: inset 0px 10px 10px 0px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: inset 0px 10px 10px 0px rgba(0, 0, 0, 0.75);
           box-shadow: inset 0px 7px 5px -2px rgba(0, 0, 0, 0.65); }
-        body header div#datum ul#dagen li.selected {
-          border: 2px solid red; }
-        body header div#datum ul#dagen li:hover {
-          border: 2px solid red;
-          width: 35px;
-          padding-left: 1px;
-          margin-top: -5px;
-          margin-left: -3px; }
-  body section {
+          body header div#datum ul#dagen li.today:hover, body header div#datum ul#dagen li.today.selected {
+            border: 2px solid red;
+            width: 35px;
+            padding-left: 1px;
+            margin-top: -5px;
+            margin-left: -3px; }
+          body header div#datum ul#dagen li.today.future:hover {
+            border: none; }
+  body header section {
     z-index: 99;
     min-height: 200px; }
   body section#home {
@@ -148,87 +157,128 @@ body {
       border-bottom: dotted 2px;
       color: red;
       margin: 20px; }
-
-.entry {
-  font-family: 'Tahoma', sans-serif;
-  width: 550px; }
-  .entry div {
-    border: 1px solid red;
-    display: inline-block; }
-  .entry .songvid {
+  body .entry {
+    display: inline-block;
+    margin-left: 20px;
+    overflow: hidden;
+    font-family: 'Tahoma', sans-serif;
+    margin-bottom: 30px;
+    width: 650px; }
+    body .entry div {
+      display: inline-block; }
+    body .entry .songvid {
+      float: left;
+      left: 30px;
+      width: 210px;
+      height: 140px; }
+    body .entry .songheader {
+      float: right;
+      left: 250px;
+      width: 420px;
+      line-height: 30px; }
+      body .entry .songheader .songnr {
+        text-align: center;
+        background-color: red;
+        color: white;
+        width: 30px;
+        height: 30px; }
+      body .entry .songheader .songtitle {
+        font-size: 120%; }
+    body .entry .songinfo {
+      margin-top: 10px;
+      overflow: hidden;
+      float: right;
+      left: 250px;
+      top: 110px;
+      width: 420px;
+      height: 75px; }
+    body .entry .songfooter {
+      float: right;
+      left: 250px;
+      top: 188px;
+      width: 420px;
+      margin-top: 10px; }
+    body .entry .songlinks {
+      color: deepskyblue; }
+    body .entry .songshare {
+      margin-left: 180px; }
+  body footer {
+    z-index: 100;
+    position: absolute;
+    top: 3270px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: grey;
+    text-decoration: none;
+    color: white;
+    float: right; }
+    body footer ul {
+      width: 600px;
+      margin: 0 auto;
+      list-style-type: none; }
+      body footer ul li {
+        display: inline-block;
+        line-height: 50px;
+        width: 60px;
+        padding: 5px; }
+  body .clearfix:after {
+    content: " ";
+    /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both; }
+  body div#rmenu {
+    z-index: 100;
+    position: absolute;
+    left: 895px;
+    top: 320px;
+    width: 230px;
+    height: 743px; }
+  body div#asidetop100 {
+    top: 200px; }
+  body div#asideprijsvraag {
+    bottom: 200px; }
+  body section#songdetail {
+    position: absolute;
+    display: block;
+    top: 250px;
+    width: 1022px;
+    background: white;
+    height: 2900px; }
+    body section#songdetail h1 {
+      border-bottom: dotted 2px;
+      color: red;
+      margin: 20px; }
+  body div.doemeeprijsvraag {
+    border: red solid 2px; }
+  body div.prvraagpic {
     position: absolute;
     left: 30px;
     width: 210px;
-    height: 140px; }
-  .entry .songheader {
+    height: 140px;
+    border: red solid 2px; }
+  body div.prvraagsongheader {
     position: absolute;
     left: 250px;
     width: 391px;
-    line-height: 30px; }
-    .entry .songheader .songnr {
-      text-align: center;
-      background-color: red;
-      color: white;
-      width: 30px;
-      height: 30px; }
-    .entry .songheader .songtitle {
-      font-size: 120%; }
-  .entry .songinfo {
-    position: absolute;
-    left: 250px;
-    top: 110px;
-    width: 391px;
-    height: 75px; }
-  .entry .songfooter {
-    position: absolute;
-    left: 250px;
-    top: 188px;
-    width: 391px; }
-
-footer {
-  z-index: 100;
-  position: absolute;
-  top: 3270px;
-  left: 0px;
-  width: 100%;
-  height: 50px;
-  background-color: grey;
-  text-decoration: none;
-  color: white;
-  float: right; }
-  footer ul {
-    width: 600px;
-    margin: 0 auto;
-    list-style-type: none; }
-    footer ul li {
-      display: inline-block;
-      line-height: 50px;
-      width: 60px;
-      padding: 5px; }
-
-.clearfix:after {
-  content: " ";
-  /* Older browser do not support empty content */
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both; }
-
-div#rmenu {
-  z-index: 100;
-  position: absolute;
-  left: 895px;
-  top: 320px;
-  width: 230px;
-  height: 743px; }
-
-div#asidetop100 {
-  top: 200px; }
-
-div#asideprijsvraag {
-  bottom: 200px; }
-
-div#test {
-  background-color: lawngreen; }
+    line-height: 30px;
+    border: red solid 2px; }
+  body div.prvraagsongnr {
+    text-align: center;
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: red solid 2px; }
+  body div.prvraagsongtitle {
+    border: red solid 2px; }
+  body div.prvraagsonginfo {
+    border: red solid 2px; }
+  body div.prvraagvraag {
+    border: red solid 2px; }
+  body div#test {
+    background-color: lawngreen; }
 
 /*# sourceMappingURL=style.css.map */

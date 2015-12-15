@@ -1,16 +1,23 @@
 <section id="prijsvraag">
 
+<div class="doemeeprijsvraag">
+    <div class="prvraagpic">
 
+    </div>
 
+    <div class="prvraagsongheader">
+        <div class="prvraagsongnr">100</div>
+        <div class="prvraagsongtitle">lorum ipsul : title</div>
+    </div>
+    <div class="prvraagsonginfo">liedje informatie</div>
 
+    <div class="prvraagvraag">
+        <p>VRAAG: Wat was het debuutalbum van Julien Clerc?</p>
+    </div>
 
+</div>
 
-
-
-
-
-
-    <div class="reageren">
+    <div class="prvraagreageren">
 
         <form method="post" action="#">
             <p>Naam</p>

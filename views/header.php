@@ -37,10 +37,11 @@
     </div>
 
     <div id="changefontsize">
+        <img src="./styles/images/grootte.png">
 
-        <div id="sizeUp">bigger text</div>
+        <!--<div id="sizeUp">bigger text</div>
         <div id="normal">normal text</div>
-        <div id="sizeDown">smaller text</div>
+        <div id="sizeDown">smaller text</div>-->
 
     </div>
 
@@ -52,9 +53,17 @@
         <h3>Juli</h3>
         <ul id="dagen">
             <?php
+            $given_date = strtotime($_GET["date"]);
             $offset = 0;
             $current_date = mktime(0, 0, 0, 12, 2, 2015);
+
             while ($offset < 23) {
+                if ($given_date == $current_date) {
+                    $selected_class = "selected ";
+                } else {
+                    $selected_class = "";
+                }
+
                 if ($current_date < mktime(0,0,0)) {
                     $date_class = "past";
                 } else if ($current_date == mktime(0,0,0)) {
@@ -62,9 +71,17 @@
                 } else {
                     $date_class = "future";
                 }
-                ?>
-                  <li class="<?php echo $date_class; ?>"><?php echo date("d", $current_date) ?></li>
+                if ($date_class != "future") {
+                    ?>
+                    <li class="<?= $selected_class ?><?= $date_class; ?>"><a
+                            href="index.php?date=<?= date("Y-m-d", $current_date) ?>"><?= date("d", $current_date) ?></a>
+                    </li>
                 <?php
+                } else {
+                ?>
+                    <li class="<?= $date_class; ?>"><?= date("d", $current_date) ?></li>
+                <?php
+                }
                 $offset += 1;
                 $current_date = strtotime("+ 1 days", $current_date);
             }

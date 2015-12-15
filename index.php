@@ -7,6 +7,8 @@ include 'views/head.php';
 
 include 'views/header.php';
 
+$page = $_GET["page"];
+
 switch($page){
     case 'home':
 
@@ -14,6 +16,9 @@ switch($page){
 
         break;
 
+    case 'detail':
+        include 'views/songdetail.php';
+        break;
     case 'prijsvraag':
 
        include 'views/prijsvraag.php';
@@ -33,8 +38,8 @@ switch($page){
         break;
 
     default;
+        //include 'views/songdetail.php';
         include 'views/home.php';
-
         break;
 
 }
